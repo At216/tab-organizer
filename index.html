@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<title>*</title>
+<link rel="icon" 
+      type="image/png" 
+      href="/favicon_blue.png">
+
+<span>Use the awesome blue favicon to separate your seemingly similar tabs into comprehensive groups!</span><br><br>
+
+<button onclick="color('green')">Make the icon green!</button><br>
+<button onclick="color('blue')">Make the icon blue!</button><br>
+<button onclick="color('orange')">Make the icon orange!</button><br>
+<button onclick="color('purple')">Make the icon purple!</button><br>
+<button onclick="color('yellow')">Make the icon yellow!</button><br>
+<button onclick="color('red')">Make the icon red!</button><br><br>
+
+<input type="text" placeholder="Rename this tab" id='nametag' autocomplete="off">
+<button onclick="rename()">Rename this tab</button>
+
+<script>
+function color(color) {
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = '/favicon_' + color + '.png';
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+
+function rename() {
+      document.title = document.getElementById('nametag').value;
+}
+</script>
+
+<style>
+button {
+      padding:5px;
+      background-color:green;
+      color:white;
+      border:solid white;
+}
+</style>
