@@ -21,7 +21,7 @@ function color(color) {
     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
-    link.href = '/docs/assets/favicon_' + color + '.png';
+    link.href = 'docs/assets/favicon_' + color + '.png';
     document.getElementsByTagName('head')[0].appendChild(link);
 }
 
